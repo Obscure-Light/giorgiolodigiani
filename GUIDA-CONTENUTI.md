@@ -1,75 +1,73 @@
 # Guida rapida gestione contenuti
 
-Il sito e stato costruito per essere gestito in modo semplice, senza dover modificare ogni pagina manualmente.
+Il sito e stato semplificato attorno a due aree principali:
+
+- `Viaggi su misura`
+- `Parti con Giorgio`
+
+La struttura contenuti ora e divisa per pagina, con un file condiviso separato.
 
 ## Dove aggiornare testi e contatti
 
-Apri `assets/js/content.js`.
+Non usare piu `assets/js/content.js` per i contenuti del sito.
 
-Le aree principali da modificare sono:
+I file da modificare sono:
 
-- `CONTACTS`: telefono, email, WhatsApp, Instagram, disponibilita.
-- `BRAND_PILLARS`: i due pilastri principali del sito, "viaggi su misura" e "accompagnamento personale".
-- `SERVICES`: card dei servizi.
-- `JOURNEYS`: card della sezione "I miei viaggi".
-- `TESTIMONIALS`: recensioni da mostrare nella home.
-- `VISITED_LOCATIONS`: punti della mappa viaggi (nome, paese, latitudine, longitudine).
-- `GALLERY_ITEMS`: foto e descrizioni della pagina galleria.
-- `pages`: testi delle singole pagine, hero, CTA e descrizioni.
+- `assets/js/content/shared.js`: contatti, immagini, navigazione e contenuti condivisi
+- `assets/js/content/home.js`: homepage
+- `assets/js/content/services.js`: pagina `Viaggi su misura`
+- `assets/js/content/journeys.js`: pagina `Parti con Giorgio`
+- `assets/js/content/gallery.js`: pagina `Foto`
+- `assets/js/content/about.js`: pagina `Chi sono`
+- `assets/js/content/contact.js`: pagina `Contatti`
 
-Ogni modifica fatta in questo file viene riutilizzata automaticamente in tutto il sito.
+## Cosa c'e in `shared.js`
+
+Dentro `assets/js/content/shared.js` trovi le strutture che vengono riusate in piu pagine:
+
+- `CONTACTS`: telefono, email, WhatsApp, disponibilita
+- `IMAGES`: percorsi immagini
+- `HOME_OFFERS`: le due card principali della home
+- `TAILORED_SERVICES`: i tre casi dei viaggi su misura
+- `ACCOMPANIED_FEATURES`: i punti chiave dei viaggi accompagnati
+- `ACCOMPANIED_TRIPS`: esempi di partenze / format
+- `PHOTO_ITEMS`: immagini e testi della sezione foto
+- `PROCESS`: flusso dei progetti su misura
+- `ACCOMPANIED_PROCESS`: flusso dei viaggi accompagnati
+- `VALUES`: principi di lavoro
+- `FAQ`: domande frequenti condivise
+- `CONTACT_CHANNELS`: recapiti mostrati in pagina contatti
 
 ## Dove aggiornare immagini
 
-Le immagini si trovano in `assets/images`.
+Le immagini stanno in `assets/images`.
 
-Hai due modi semplici per aggiornarle:
+Puoi:
 
-1. Sostituisci il file immagine mantenendo lo stesso nome.
-2. Oppure cambia il percorso dell'immagine nel file `assets/js/content.js`.
-
-## Come aggiornare la mappa viaggi
-
-La mappa si trova nella pagina `viaggi.html` ed e alimentata da `VISITED_LOCATIONS` in `assets/js/content.js`.
-Usa una base OpenStreetMap con visualizzazione Leaflet, quindi i punti vengono localizzati su coordinate reali.
-
-Per ogni nuova meta aggiungi un oggetto con questa struttura:
-
-- `name`: nome citta/meta
-- `country`: paese
-- `lat`: latitudine (numero)
-- `lon`: longitudine (numero)
-- `featured` (opzionale): `true` se vuoi evidenziare la meta piu delle altre
-
-## Come aggiornare la galleria
-
-La pagina `galleria.html` legge tutto da `GALLERY_ITEMS` in `assets/js/content.js`.
-
-Per ogni nuova foto puoi aggiornare questi campi:
-
-- `image`: percorso del file immagine
-- `alt`: testo alternativo dell'immagine
-- `tag`: etichetta breve visibile sulla card
-- `title`: titolo della card
-- `text`: descrizione breve
-- `location`: localita o area
-- `chips`: piccoli tag opzionali
-- `layout` (opzionale): `wide` o `tall` per cambiare il formato visivo
+1. sostituire il file mantenendo lo stesso nome
+2. oppure cambiare il percorso in `assets/js/content/shared.js`
 
 ## Come funzionano le pagine
 
 Le pagine HTML sono:
 
 - `index.html`
+- `servizi.html` -> Viaggi su misura
+- `viaggi.html` -> Parti con Giorgio
+- `galleria.html` -> Foto
 - `chi-sono.html`
-- `servizi.html`
-- `viaggi.html`
-- `galleria.html`
 - `contatti.html`
 
-Lo stile e in `assets/css/styles.css`.
+Ogni pagina carica:
 
-La logica del sito e in `assets/js/site.js`.
+1. `assets/js/content/shared.js`
+2. il suo file contenuti specifico
+3. `assets/js/site.js`
+
+## Dove stanno stile e logica
+
+- `assets/css/styles.css`: UI e layout
+- `assets/js/site.js`: rendering e interazioni
 
 ## Nota sul form contatti
 
