@@ -12,7 +12,7 @@
       secondaryCta: { label: "Parti con Giorgio", href: "viaggi.html" },
       pills: ["Su misura", "Viaggi accompagnati", "Presenza personale"],
       badge: "Consulenza e accompagnamento",
-      image: "assets/images/giorgio-portrait-placeholder.svg",
+      image: "assets/images/foto/giorgio-portrait.JPG",
       imageAlt: "Ritratto professionale di Giorgio Lodigiani",
       cardTitle: "Giorgio Lodigiani",
       cardText: "Un modo di lavorare basato su ascolto, selezione e una lettura chiara del viaggio prima della partenza.",
