@@ -57,7 +57,9 @@
     <header class="site-header" data-header>
       <div class="shell header-inner">
         <a class="brand" href="index.html" aria-label="${global.siteName}, torna alla home">
-          <span class="brand-mark">GL</span>
+          <span class="brand-mark">
+            <img src="assets/images/logo-nuovo.jpg" alt="Logo ${global.siteName}" loading="eager" decoding="async">
+          </span>
           <span class="brand-copy">
             <strong>${global.siteName}</strong>
             <span>${global.role}</span>
@@ -584,7 +586,9 @@
           <div class="footer-top">
             <div>
               <div class="brand footer-brand">
-                <span class="brand-mark">GL</span>
+                <span class="brand-mark">
+                  <img src="assets/images/logo-nuovo.jpg" alt="Logo ${global.siteName}" loading="lazy" decoding="async">
+                </span>
                 <span class="brand-copy">
                   <strong>${global.siteName}</strong>
                   <span>${global.role}</span>
